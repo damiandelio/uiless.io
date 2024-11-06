@@ -10,14 +10,21 @@ export default [
   },
   {
     languageOptions: {
+      ecmaVersion: 2020,
       globals: globals.browser,
     },
   },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
   {
     // Note: there should be no other properties in this object
-    ignores: ['coverage', 'public', 'dist', 'pnpm-lock.yaml'],
+    ignores: [
+      'coverage',
+      '**/public',
+      '**/dist',
+      'pnpm-lock.yaml',
+      'pnpm-workspace.yaml',
+    ],
   },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
 ];
