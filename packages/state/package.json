@@ -1,7 +1,19 @@
 {
-  "name": "state",
-  "private": true,
+  "name": "@uiless.io/state",
   "version": "0.0.0",
+  "author": "Damian De Lio (https://github.com/damiandelio)",
+  "license": "MIT",
+  "description": "State management",
+  "keywords": [
+    "state",
+    "immer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damiandelio/uiless.io.git",
+    "directory": "packages/state"
+  },
+  "homepage": "",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
