@@ -10,6 +10,9 @@ export default defineConfig({
       formats: ['es'], // Specifies the output format as ES module
       fileName: () => 'index.js', // Specifies the output filename as "index.js"
     },
+    rollupOptions: {
+      external: ['react'],
+    },
   },
   resolve: {
     alias: {
