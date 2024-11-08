@@ -9,7 +9,8 @@
     "prepare": "husky",
     "test": "vitest",
     "test:cov": "vitest run --coverage",
-    "state": "pnpm --filter ./packages/state"
+    "state": "pnpm --filter ./packages/state",
+    "state-react": "pnpm --filter ./packages/state-react"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
