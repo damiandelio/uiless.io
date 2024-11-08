@@ -1,0 +1,43 @@
+{
+  "name": "@uiless.io/state-react",
+  "version": "0.0.1",
+  "author": "Damian De Lio (https://github.com/damiandelio)",
+  "license": "MIT",
+  "description": "",
+  "keywords": [
+    "state",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damiandelio/uiless.io.git",
+    "directory": "packages/state-react"
+  },
+  "homepage": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "!src/__tests__"
+  ],
+  "dependencies": {
+    "@types/use-sync-external-store": "^0.0.6",
+    "use-sync-external-store": "^1.2.2"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17 || ^18 || ^19"
+  }
+}
