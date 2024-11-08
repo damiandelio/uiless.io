@@ -9,6 +9,7 @@
     "prepare": "husky",
     "test": "vitest",
     "test:cov": "vitest run --coverage",
+    "website": "pnpm --filter ./website",
     "state": "pnpm --filter ./packages/state",
     "state-react": "pnpm --filter ./packages/state-react"
   },

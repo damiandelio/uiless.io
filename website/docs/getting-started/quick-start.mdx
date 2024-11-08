@@ -1,0 +1,196 @@
+---
+sidebar_label: 'Quick Start'
+sidebar_position: 2
+---
+
+# Quick Start
+
+Welcome to the State documentation! This guide is designed to walk you through the basics of State. How to use it to create a **state driven UI** with a **business-logic-first** approach.
+
+In this guide, we’ll create a TODO App to demonstrate how to:
+
+- Build the front-end logic without being dependent of a UI framework or UI elements.
+- Integrate it into a React component.
+
+## Setup
+
+First you need to setup the environment for this example.
+
+### Clone the example repository
+
+It is a basic Vite + React app.
+
+```
+git clone <URL>
+```
+
+:::tip
+You can also do the example online in the CodeSandbox.
+:::
+
+### Install the dependencies
+
+Enter to the created folder and run.
+
+```
+npm i uiless.io/state && uiless.io/state-react
+```
+
+### Run the project
+
+```
+npm run dev
+```
+
+Open `localhost:3000` in the browser to see the project running.
+
+## Creating the TODOs app state
+
+Create a file `TodoApp.js` inside `src/state/`.
+
+Descripcion...
+
+```jsx
+import { State } from 'uiless.io/state';
+
+// highlight-start
+export class TodoApp extends State {
+  // highlight-end
+  constructor() {}
+}
+```
+
+Descripcion...
+
+```jsx
+// highlight-start
+const initialTodoApp = {
+  todos: [],
+};
+// highlight-end
+
+export class TodoApp extends State {
+  constructor() {
+    // highlight-start
+    super(initialTodoApp);
+    // highlight-end
+  }
+}
+```
+
+Descripcion...
+
+```jsx
+export class TodoApp extends State {
+  ...
+
+  // highlight-start
+  addTodo = (text) => {};
+  // highlight-end
+
+  // highlight-start
+  removeTodo = (id) => {};
+  // highlight-end
+}
+```
+
+Descripcion...
+
+```jsx
+export class TodoApp extends State {
+  ...
+
+  addTodo = (text) => {
+    // highlight-start
+    this.update((state) => {
+      state.todos.push({ id: crypto.randomUUID(), text });
+    });
+    // highlight-end
+  };
+
+  removeTodo = (id) => {
+    // highlight-start
+    this.update((state) => {
+      state.todos = state.todos.filter((todo) => todo.id !== id);
+    });
+    // highlight-end
+  };
+}
+```
+
+Descripcion codigo completo...
+
+```jsx title="src/state/TodoApp.js"
+import { State } from 'uiless.io/state';
+
+const initialTodoApp = {
+  todos: [],
+};
+
+export class TodoApp extends State {
+  constructor() {
+    super(initialTodoApp);
+  }
+
+  addTodo = (text) => {
+    this.update((state) => {
+      state.todos.push({ id: crypto.randomUUID(), text });
+    });
+  };
+
+  removeTodo = (id) => {
+    this.update((state) => {
+      state.todos = state.todos.filter((todo) => todo.id !== id);
+    });
+  };
+}
+```
+
+Now create a `index.js` file inside `src/state/`.
+
+```jsx title="src/state/index.js"
+import { TodoApp } from './TodoApp';
+
+export const todoApp = new TodoApp();
+```
+
+## Integrating with the UI (React)
+
+You have written all the business logic and state behavior in plain js without a UI framework. It is time to add some React specifics.
+
+Modify the file `src/app.js` to look like this:
+
+```jsx title="src/app.js"
+import { useSubscribeState } from 'uiless.io/state-react';
+import { todoApp } from './state';
+
+function App() {
+  // highlight-start
+  const { todos } = useSubscribeState(todoApp);
+  // highlight-end
+
+  return (
+    <div>
+      <input
+        type="text"
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            // highlight-start
+            todoApp.addTodo(event.target.value);
+            // highlight-end
+          }
+        }}
+      />
+      <div>
+        // highlight-start
+        {todos.map((todo) => (
+          <div key={todo.id}>{todo.text}</div>
+        ))}
+        // highlight-end
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
