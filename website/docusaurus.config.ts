@@ -1,4 +1,5 @@
 import { themes as prismThemes } from 'prism-react-renderer';
+import npm2yarnPlugin from '@docusaurus/remark-plugin-npm2yarn';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
@@ -39,6 +40,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          remarkPlugins: [[npm2yarnPlugin, { sync: true }]],
         },
         blog: {
           showReadingTime: true,
@@ -78,9 +80,9 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        // { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/damiandelio/uiless.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -93,12 +95,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Docs',
+              label: 'Getting Started',
               to: '/docs/getting-started/quick-start',
             },
           ],
         },
-        {
+        /* {
           title: 'Community',
           items: [
             {
@@ -114,22 +116,22 @@ const config: Config = {
               href: 'https://twitter.com/docusaurus',
             },
           ],
-        },
+        }, */
         {
           title: 'More',
           items: [
-            {
+            /* {
               label: 'Blog',
               to: '/blog',
-            },
+            }, */
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/damiandelio/uiless.io',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © 2024–${new Date().getFullYear()} Damián De Lio.`,
     },
     prism: {
       theme: prismThemes.github,
