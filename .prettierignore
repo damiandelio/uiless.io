@@ -1,4 +1,8 @@
-coverage
-public
-dist
-pnpm-lock.yaml
+**/coverage
+**/public
+**/dist
+**/pnpm-lock.yaml
+
+# Website
+**/.docusaurus
+**/build

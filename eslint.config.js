@@ -20,6 +20,8 @@ export default [
       'coverage',
       '**/public',
       '**/dist',
+      '**/build',
+      '**/.docusaurus',
       'pnpm-lock.yaml',
       'pnpm-workspace.yaml',
     ],
