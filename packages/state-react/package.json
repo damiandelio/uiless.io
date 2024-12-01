@@ -1,6 +1,6 @@
 {
   "name": "@uiless.io/state-react",
-  "version": "0.0.1",
+  "version": "1.0.0-alpha.1",
   "author": "Damian De Lio (https://github.com/damiandelio)",
   "license": "MIT",
   "description": "",
@@ -13,7 +13,7 @@
     "url": "https://github.com/damiandelio/uiless.io.git",
     "directory": "packages/state-react"
   },
-  "homepage": "",
+  "homepage": "https://state.uiless.io",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

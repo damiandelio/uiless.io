@@ -1,9 +1,9 @@
 {
   "name": "@uiless.io/state",
-  "version": "0.0.3",
+  "version": "1.0.0-alpha.1",
   "author": "Damian De Lio (https://github.com/damiandelio)",
   "license": "MIT",
-  "description": "State management",
+  "description": "State is a framework agnostic state management library designed for modern JavaScript and TypeScript applications",
   "keywords": [
     "state",
     "immer"
@@ -13,7 +13,7 @@
     "url": "https://github.com/damiandelio/uiless.io.git",
     "directory": "packages/state"
   },
-  "homepage": "",
+  "homepage": "https://state.uiless.io",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

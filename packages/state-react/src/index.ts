@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'use-sync-external-store/shim';
 
-export function useSubscribeState<T extends object>({
+export function useSubscribe<T>({
   subscribe,
   getState,
 }: {
