@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: () => 'index.js', // Specifies the output filename as "index.js"
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', 'react-dom', '@uiless.io/state'],
     },
   },
   resolve: {
